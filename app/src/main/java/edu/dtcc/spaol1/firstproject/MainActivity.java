@@ -56,15 +56,16 @@ public class MainActivity extends AppCompatActivity {
     {
         // Create TextView object
         TextView textView = (TextView) findViewById(R.id.editText);
+        TextView textView2 = (TextView) findViewById(R.id.textView2);
+
+        // Set text for textView2 and concatenate the hello string with the name one
+        textView2.setText(getString(R.string.hello).concat(textView.getText().toString()));
 
         // Create Snackbar toast to display "Hello (NAME)"
-        Snackbar.make(view, "Hello " + textView.getText().toString(), Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Generating Name", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
         // Create a Log entry
         Log.d("Sean", "Handled a Button Click");
-
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
-        textView2.setText("Hello" + textView.getText().toString());
     }
 }
